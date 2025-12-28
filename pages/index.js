@@ -57,6 +57,19 @@ export default function MarcusProtocol() {
         'Monthly Q&A calls',
         'Wealth Perpetuation Module'
       ]
+    },
+    receptionist: {
+      name: 'AI Receptionist Bot',
+      price: 269,
+      monthly: 149,
+      description: 'Automate your client intake and scheduling.',
+      features: [
+        '24/7 Call Handling',
+        'Instant Appointment Booking',
+        'Custom Script Integration',
+        'CRM Integration',
+        '$269 Setup + $149/mo'
+      ]
     }
   };
 
