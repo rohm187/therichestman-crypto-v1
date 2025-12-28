@@ -12,6 +12,7 @@ export default function MarcusProtocol() {
       name: 'Marcus Protocol Course',
       price: 297,
       description: 'Learn to build your own 20% monthly income system',
+      comingSoon: true,
       features: [
         '8-module video course (6+ hours)',
         'Step-by-step implementation guide',
@@ -26,6 +27,7 @@ export default function MarcusProtocol() {
       name: 'Done-For-You Setup',
       price: 10000,
       description: 'We set up everything for you - just start earning',
+      comingSoon: true,
       features: [
         'Complete Marcus Protocol implementation',
         'Life insurance policy setup',
@@ -35,6 +37,40 @@ export default function MarcusProtocol() {
         '1-year support included',
         'Guaranteed 20% monthly returns*'
       ]
+    },
+    pdf1: {
+      name: 'Crypto Security & Basics Guide',
+      price: 37,
+      description: 'Essential guide to securing your assets and understanding the market.',
+      features: [
+        'Wallet security masterclass',
+        'Scam prevention checklist',
+        'Exchange setup guide',
+        'Instant PDF Download'
+      ]
+    },
+    pdf2: {
+      name: 'Financial Freedom Strategy',
+      price: 68,
+      description: 'The mathematical blueprint to replacing your income.',
+      features: [
+        'Freedom number calculator',
+        'Asset allocation models',
+        'Debt leverage strategies',
+        'Instant PDF Download'
+      ]
+    },
+    pdfBundle: {
+      name: 'Complete Knowledge Bundle',
+      price: 99,
+      description: 'Get both guides and save $6.',
+      features: [
+        'Crypto Security & Basics Guide',
+        'Financial Freedom Strategy',
+        'Bonus: Resource Checklist',
+        'Instant Access to Both'
+      ],
+      highlight: true
     },
     receptionist: {
       name: 'AI Receptionist Bot',
@@ -164,6 +200,11 @@ export default function MarcusProtocol() {
                             ${pkg.price.toLocaleString()}
                             {pkg.monthly && <div className="text-xs text-white">+ ${pkg.monthly}/mo</div>}
                           </div>
+                          {pkg.comingSoon && (
+                            <div className="mt-2 text-xs bg-gray-700 text-white px-2 py-1 rounded inline-block">
+                              Coming Soon
+                            </div>
+                          )}
                         </div>
                       </div>
                     ))}
@@ -183,9 +224,14 @@ export default function MarcusProtocol() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-yellow-500 hover:bg-yellow-600 text-black font-bold text-xl rounded-lg transition-colors shadow-lg shadow-yellow-500/20"
+                  disabled={packages[selectedPackage].comingSoon}
+                  className={`w-full py-4 font-bold text-xl rounded-lg transition-colors shadow-lg ${
+                    packages[selectedPackage].comingSoon
+                      ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                      : 'bg-yellow-500 hover:bg-yellow-600 text-black shadow-yellow-500/20'
+                  }`}
                 >
-                  Access Marcus Protocol Now
+                  {packages[selectedPackage].comingSoon ? 'Join Waitlist' : 'Get Instant Access'}
                 </button>
               </form>
             </div>
