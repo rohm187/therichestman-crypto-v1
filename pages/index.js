@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { DollarSign, TrendingUp, Shield, BookOpen, Users, Star, CheckCircle } from 'lucide-react';
 import Head from 'next/head';
 
@@ -141,11 +140,7 @@ export default function MarcusProtocol() {
       <section className="relative overflow-hidden py-20 md:py-32">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <span className="inline-block py-1 px-3 rounded-full bg-yellow-500/10 text-yellow-400 text-sm font-bold mb-6 border border-yellow-500/20">
               THE MARCUS PROTOCOL
             </span>
@@ -174,7 +169,7 @@ export default function MarcusProtocol() {
                 Free Tax Loophole Guide
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
